@@ -70,7 +70,12 @@ export default function Footer() {
           </p>
 
           {/* SOCIAL */}
-          <div className="flex justify-center lg:justify-start gap-3 flex-wrap">
+          <div className="space-y-4">
+            <h3 className="text-gray-900 text-xs uppercase font-bold tracking-widest text-center lg:text-left"
+            style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
+              FOLLOW US
+            </h3>
+            <div className="flex justify-center lg:justify-start gap-3 flex-wrap">
             {[
               { icon: <FaFacebookF />, link: "https://www.facebook.com/southerndesignwarehousetampa/" },
               { icon: <FaInstagram />, link: "https://www.instagram.com/southerndesignwarehouse/" },
@@ -89,11 +94,13 @@ export default function Footer() {
             ))}
           </div>
         </div>
+      </div>
 
         {/* SERVICES */}
         <div>
-          <h3 className="text-gray-900 text-sm uppercase font-bold mb-6 tracking-widest">
-            Services
+          <h3 className="text-gray-900 text-sm uppercase font-bold mb-6 tracking-widest"
+          style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
+            SERVICES
           </h3>
 
           <ul className="space-y-3 text-sm">
@@ -114,13 +121,16 @@ export default function Footer() {
 
         {/* CONTACT */}
         <div>
-          <h3 className="text-gray-900 text-sm uppercase font-bold mb-6 tracking-widest">
-            Contact
+          <h3 className="text-gray-900 text-sm uppercase font-bold mb-6 tracking-widest"
+          style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
+            CONTACT
           </h3>
 
           <ul className="space-y-4 text-sm">
             <li className="leading-relaxed">
-              Tampa, Carrollwood & surrounding areas
+              <span className="block font-bold text-gray-900 mb-1">Our Showroom:</span>
+              8524 E Adamo Dr, Tampa, FL 33619 <br />
+              <span className="text-xs text-gray-400 italic">Serving Tampa, Carrollwood & surrounding areas</span>
             </li>
 
             <li className="text-gray-900 font-medium">
@@ -140,9 +150,7 @@ export default function Footer() {
 
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-gray-500">
 
-            <Link href="/faq" className="hover:text-green-600 transition">
-              FAQ
-            </Link>
+            
 
             <Link href="/privacy-policy" className="hover:text-green-600 transition">
               Privacy Policy

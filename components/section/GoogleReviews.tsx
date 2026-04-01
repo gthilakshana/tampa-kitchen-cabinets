@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Script from "next/script";
 import { FaStar } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function GoogleReviews() {
   useEffect(() => {
@@ -56,21 +57,29 @@ export default function GoogleReviews() {
       <div className="max-w-7xl mx-auto px-4">
 
         {/* HEADER */}
-        <div className="mb-12 text-center">
-          <p className="text-green-700 text-xs font-bold uppercase mb-3">
-            Customer Reviews
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-12 text-center"
+        >
+          <p className="text-green-800 text-xs font-bold uppercase mb-3 flex items-center justify-center gap-2 text-center">
+             <FaStar className="text-red-600" /> GOOGLE REVIEWS SECTION
           </p>
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-stone-900 mb-4">
-            What Our <span className="text-red-600">Customers Say</span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-stone-900 mb-4 uppercase"
+          style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
+            WHAT OUR <span className="text-red-600">CUSTOMERS SAY</span>
           </h2>
 
-          <p className="text-stone-500 max-w-2xl mx-auto">
-            Real feedback from real customers. See why homeowners and contractors trust us.
+          <p className="text-stone-500 text-lg font-light max-w-2xl mx-auto leading-relaxed">
+            Real feedback from real customers. <br />
+            <span className="italic font-normal">See why homeowners and contractors trust us.</span>
           </p>
 
         
-        </div>
+        </motion.div>
 
         {/* TOP BAR */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-8">
@@ -83,20 +92,26 @@ export default function GoogleReviews() {
             href="https://search.google.com/local/writereview?placeid=ChIJ9wVaf7PPwogRmpdkStSu2Pg"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-red-600 hover:bg-red-500 text-white font-semibold px-6 py-3 rounded-sm transition-all"
+            className="bg-green-800 hover:bg-red-600 text-white font-bold px-6 py-3 rounded-sm transition-all shadow-md uppercase tracking-widest text-xs"
           >
             Write a Review
           </a>
         </div>
 
         {/* REVIEWS CARD */}
-        <div className="bg-white rounded-sm shadow-lg border border-stone-100 p-4">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-sm shadow-lg border border-stone-100 p-4"
+        >
           <div
             id="featurable-ea5ced90-f759-4114-961d-d3cee1fef957"
             data-featurable-async
             className="w-full"
           ></div>
-        </div>
+        </motion.div>
 
         <Script
           src="https://featurable.com/assets/v2/carousel_default.min.js"

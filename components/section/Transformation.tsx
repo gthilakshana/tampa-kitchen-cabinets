@@ -11,6 +11,7 @@ import {
   FaHome,
   FaHardHat,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const beforeAfter = [
   {
@@ -49,22 +50,28 @@ export default function Transformation() {
         <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT */}
-          <div>
-            <p className="text-green-700 text-xs font-bold uppercase tracking-widest mb-3">
-              Kitchen Transformation
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-green-800 text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
+              <FaHome className="text-green-800 text-sm" /> KITCHEN TRANSFORMATION BENEFITS
             </p>
 
-            <h2 className="text-4xl sm:text-5xl font-bold text-stone-900 mb-6 leading-tight">
-              Transform Your Kitchen.{" "}
-              <span className="text-green-700">Transform Your Home.</span>
+            <h2 className="text-4xl sm:text-6xl font-bold text-stone-900 mb-6 leading-tight uppercase"
+            style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
+              TRANSFORM YOUR KITCHEN. <br />
+              <span className="text-green-800">TRANSFORM YOUR HOME.</span>
             </h2>
 
-            <p className="text-stone-500 text-lg mb-6">
-              Your kitchen is more than just a place to cook — it’s where life happens.
+            <p className="text-stone-600 text-xl font-light mb-8">
+              Your kitchen is more than just a place to cook. <span className="font-semibold text-stone-800">It’s where life happens.</span>
             </p>
 
-            <p className="text-stone-500 mb-8">
-              With our modern kitchen cabinets Tampa homeowners love, you can create a space that is both functional and beautiful.
+            <p className="text-stone-500 mb-8 leading-relaxed">
+              With our modern kitchen cabinets Tampa homeowners love, you can:
             </p>
 
             {/* Benefits */}
@@ -74,7 +81,7 @@ export default function Transformation() {
                   <span className="bg-green-100 text-green-700 p-1 rounded-sm">
                     <FaCheck size={12} />
                   </span>
-                  <span className="text-stone-700 text-sm">{b}</span>
+                  <span className="text-stone-700 text-sm italic">{b}</span>
                 </li>
               ))}
             </ul>
@@ -82,37 +89,42 @@ export default function Transformation() {
             {/* CTA */}
             <a
               href="#quote"
-              className="bg-green-700 hover:bg-green-600 text-white px-8 py-4 rounded-sm font-bold inline-block"
+              className="bg-green-800 hover:bg-red-600 text-white px-8 py-4 rounded-sm font-bold inline-block transition-colors shadow-md uppercase tracking-widest text-sm"
             >
               Get a Free Quote
             </a>
-          </div>
+          </motion.div>
 
           {/* RIGHT */}
           <div className="space-y-5">
 
-            {/* IMAGE */}
-            <div className="relative h-64 rounded-sm overflow-hidden shadow-lg">
+            <motion.div 
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative h-64 rounded-sm overflow-hidden shadow-lg"
+            >
               <Image
                 src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77"
-                alt="Modern Kitchen"
+                alt="Beautifully renovated kitchen with modern cabinets Tampa"
                 fill
                 className="object-cover"
               />
-            </div>
+            </motion.div>
 
             {/* BEFORE / AFTER */}
             {beforeAfter.map((item, i) => (
               <div
-                key={i}
+                key={item.before}
                 className="grid grid-cols-2 border border-stone-200 rounded-sm overflow-hidden"
               >
-                <div className="bg-stone-800 px-5 py-4 flex items-center gap-2 text-stone-300 text-sm">
+                <div className="bg-stone-800 px-5 py-4 flex items-center gap-2 text-stone-300 text-sm italic">
                   <FaTimes className="text-red-500" />
                   {item.before}
                 </div>
 
-                <div className="bg-white px-5 py-4 border-l border-green-200 flex items-center gap-2 text-stone-800 text-sm">
+                <div className="bg-white px-5 py-4 border-l border-green-200 flex items-center gap-2 text-stone-800 text-sm font-semibold">
                   <FaCheck className="text-green-600" />
                   {item.after}
                 </div>
@@ -126,28 +138,34 @@ export default function Transformation() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* IMAGE */}
-          <div className="relative h-[420px] rounded-sm overflow-hidden shadow-lg">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative h-[420px] rounded-sm overflow-hidden shadow-lg"
+          >
             <Image
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-              alt="Kitchen Storage"
+              alt="Efficient kitchen storage solutions with custom cabinet accessories"
               fill
               className="object-cover"
             />
-          </div>
+          </motion.div>
 
           {/* CONTENT */}
           <div>
-            <p className="text-green-700 text-xs font-bold uppercase tracking-widest mb-3">
-              Smart Storage
+            <p className="text-green-800 text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
+              <FaBoxes className="text-green-800 text-sm" /> SMART STORAGE SOLUTIONS
             </p>
 
-            <h2 className="text-4xl font-bold text-stone-900 mb-4">
-              Designed for Real Life
+            <h2 className="text-4xl sm:text-5xl font-bold text-stone-900 mb-4"
+            style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
+              DESIGNED FOR REAL LIFE
             </h2>
 
-            <p className="text-stone-500 text-lg mb-8">
-              We don’t just sell cabinets — we help you design a better way to live.
+            <p className="text-stone-500 text-lg mb-8 leading-relaxed">
+              We don’t just sell cabinets. We help you design a <span className="text-green-800 font-semibold italic">better way to live.</span>
             </p>
 
             {/* FEATURES */}
@@ -182,37 +200,43 @@ export default function Transformation() {
         <div className="max-w-7xl mx-auto px-4">
 
           <div className="text-center mb-16">
-            <p className="text-green-500 text-xs uppercase tracking-widest mb-3">
-              Who We Serve
+            <p className="text-green-800 text-xs font-bold uppercase tracking-widest mb-3 flex items-center justify-center gap-2">
+              <FaHardHat className="text-green-800 text-sm" /> WHO WE SERVE
             </p>
 
-            <h2 className="text-4xl font-bold text-white">
-              Built for Homeowners & Professionals
+            <h2 className="text-4xl sm:text-6xl font-bold text-white tracking-tight"
+            style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
+              BUILT FOR HOMEOWNERS & PROFESSIONALS
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
 
             {/* HOMEOWNERS */}
-            <div className="bg-stone-800 p-8 rounded-sm hover:shadow-lg transition">
-              <FaHome className="text-green-500 text-3xl mb-6" />
+            <div className="bg-stone-800 p-10 rounded-sm border border-stone-700 hover:border-green-800 transition-all group">
+              <FaHome className="text-green-800 text-4xl mb-6 group-hover:scale-110 transition" />
               <h3 className="text-white text-2xl font-bold mb-4">
-                Homeowners
+                🏡 HOMEOWNERS
               </h3>
-              <p className="text-stone-400 text-sm">
-                Full kitchen remodels, modern upgrades, and personalized design guidance.
-              </p>
+              <ul className="text-stone-400 space-y-3 text-sm">
+                <li className="flex items-center gap-2">✔ Full kitchen remodels</li>
+                <li className="flex items-center gap-2">✔ Style upgrades with modern or shaker cabinets</li>
+                <li className="flex items-center gap-2">✔ Personalized design guidance</li>
+              </ul>
             </div>
 
             {/* CONTRACTORS */}
-            <div className="bg-red-600 p-8 rounded-sm hover:shadow-lg transition">
-              <FaHardHat className="text-white text-3xl mb-6" />
-              <h3 className="text-white text-2xl font-bold mb-4">
-                Contractors & Builders
+            <div className="bg-white p-10 rounded-sm hover:shadow-2xl transition-all border-t-4 border-green-800 group relative">
+              <div className="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-sm uppercase tracking-wider">BULK PRICING</div>
+              <FaHardHat className="text-stone-900 text-4xl mb-6 group-hover:scale-110 transition" />
+              <h3 className="text-stone-900 text-2xl font-bold mb-4">
+                🏗️ CONTRACTORS, BUILDERS & FLIPPERS
               </h3>
-              <p className="text-red-100 text-sm">
-                Wholesale pricing, bulk supply, and fast turnaround to keep projects on schedule.
-              </p>
+              <ul className="text-stone-500 space-y-3 text-sm">
+                <li className="flex items-center gap-2 text-green-800 font-bold italic">✔ Reliable wholesale cabinets Tampa supply</li>
+                <li className="flex items-center gap-2">✔ Consistent inventory for ongoing projects</li>
+                <li className="flex items-center gap-2">✔ Fast turnaround to keep jobs on schedule</li>
+              </ul>
             </div>
 
           </div>
@@ -221,7 +245,7 @@ export default function Transformation() {
           <div className="text-center mt-12">
             <a
               href="#quote"
-              className="bg-green-700 hover:bg-green-600 text-white px-8 py-4 font-bold rounded-sm"
+              className="bg-green-800 hover:bg-red-600 text-white px-10 py-5 font-bold rounded-sm uppercase tracking-widest text-sm shadow-lg transition-all"
             >
               Get Contractor Pricing Today
             </a>

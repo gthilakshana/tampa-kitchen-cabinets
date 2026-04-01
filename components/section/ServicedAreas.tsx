@@ -24,14 +24,14 @@ export default function LocalTrust() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <p className="text-green-700 text-xs font-bold uppercase tracking-widest mb-3">
-              Local Trust
+            <p className="text-green-800 text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
+              <FaMapMarkerAlt className="text-green-800 text-sm" /> LOCAL TRUST SECTION
             </p>
 
-            <h2 className="text-4xl sm:text-5xl font-bold text-stone-900 mb-5 leading-tight">
-              Your Local Cabinet
-              <br />
-              Showroom in Tampa
+            <h2 className="text-4xl sm:text-6xl font-bold text-stone-900 mb-5 leading-tight uppercase"
+            style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
+              YOUR LOCAL CABINET <br />
+              SHOWROOM IN TAMPA
             </h2>
 
             <p className="text-stone-500 text-lg mb-8 leading-relaxed">
@@ -55,17 +55,17 @@ export default function LocalTrust() {
             </div>
 
             {/* Description */}
-            <p className="text-stone-500 leading-relaxed mb-8">
-              Visit our cabinet showroom in Tampa and experience quality
-              firsthand. See finishes, feel materials, and choose with
-              confidence.
+            <p className="text-stone-500 leading-relaxed text-lg font-light mb-8 italic">
+              Visit our cabinet showroom in Tampa and experience quality firsthand. 
+              <span className="text-stone-800 font-semibold"> See finishes, feel materials, and choose with confidence.</span>
             </p>
 
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#quote"
-                className="bg-green-700 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-sm text-center transition"
+                href="https://maps.google.com/?q=8524+E+Adamo+Dr,+Tampa,+FL+33619"
+                target="_blank"
+                className="bg-green-800 hover:bg-red-600 text-white font-bold px-8 py-4 rounded-sm text-center transition shadow-md uppercase tracking-widest text-sm"
               >
                 Visit Showroom
               </a>
@@ -95,7 +95,7 @@ export default function LocalTrust() {
                 style={{ border: 0 }}
                 loading="lazy"
                 allowFullScreen
-                title="Tampa Showroom Location"
+                title="Map of Southern Design Warehouse Kitchen Cabinet Showroom in Tampa"
               ></iframe>
             </div>
 

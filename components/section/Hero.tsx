@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FaMapMarkerAlt, FaHardHat } from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -10,12 +11,25 @@ export default function Hero() {
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
-          alt="Luxury kitchen"
+          alt="Luxury modern kitchen cabinets Tampa showroom"
           className="w-full h-full object-cover"
         />
         
         <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-amber-900/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+        
+        {/* Urgency Badge */}
+        <div className="absolute top-24 left-1/2 -translate-x-1/2 z-20">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1, duration: 0.5 }}
+            className="bg-green-800 text-white px-4 py-1.5 rounded-sm text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-sm border border-white/10"
+          >
+            <span className="w-2 h-2 bg-red-600 rounded-full animate-pulse" />
+            Limited Stock Available
+          </motion.div>
+        </div>
       </div>
 
       {/* Content */}
@@ -23,15 +37,15 @@ export default function Hero() {
 
      
 
-        {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-6xl uppercase font-bold  mb-6 mt-10"
+          className="text-4xl sm:text-7xl font-bold mb-6 mt-10 tracking-tight uppercase"
           style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
         >
-          Your Dream Kitchen Starts Here in Tampa
+          YOUR DREAM KITCHEN <br />
+          <span className="text-green-800">STARTS HERE IN TAMPA</span>
         </motion.h1>
 
         {/* Description */}
@@ -39,7 +53,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-8"
+          className="text-gray-200 text-lg sm:text-xl max-w-3xl mx-auto mb-8 leading-relaxed font-light"
         >
           Upgrade your space with premium modern kitchen cabinets in Tampa and
           timeless shaker cabinets designed for beauty, storage, and everyday
@@ -53,10 +67,14 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="flex flex-wrap justify-center gap-6 text-sm text-gray-300 mb-10"
+          className="flex flex-wrap justify-center gap-8 text-sm sm:text-base text-gray-300 mb-12 font-medium"
         >
-          <span>📍 Serving Tampa, Carrollwood & surrounding areas</span>
-          <span>🏗️ Contractor pricing available</span>
+          <span className="flex items-center gap-2">
+            <FaMapMarkerAlt className="text-red-600" /> Serving Tampa, Carrollwood & surrounding areas
+          </span>
+          <span className="flex items-center gap-2">
+            <FaHardHat className="text-green-800" /> Contractor pricing available
+          </span>
         </motion.div>
 
         {/* CTA Buttons */}
@@ -64,25 +82,25 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center mt-6"
         >
           <a
             href="#quote"
-            className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-md transition-all hover:scale-105"
+            className="bg-green-800 hover:bg-red-600 text-white font-bold px-8 py-4 rounded-sm transition-all shadow-md uppercase tracking-wider text-sm"
           >
             Get a Free Quote
           </a>
 
           <a
             href="#showroom"
-            className="border border-white/30 hover:border-red-600 px-8 py-4 rounded-md backdrop-blur-md transition-all"
+            className="border border-white/50 hover:bg-white/10 text-white font-bold px-8 py-4 rounded-sm transition-all uppercase tracking-wider text-sm"
           >
             Visit Our Tampa Showroom
           </a>
 
           <a
             href="tel:+18135550000"
-            className="border border-white/30 hover:border-red-600 px-8 py-4 rounded-md backdrop-blur-md transition-all"
+            className="border border-white/50 hover:bg-white/10 text-white font-bold px-8 py-4 rounded-sm transition-all uppercase tracking-wider text-sm"
           >
             Call Now
           </a>

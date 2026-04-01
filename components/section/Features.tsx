@@ -1,3 +1,5 @@
+"use client";
+
 import { 
   FaCheckCircle, 
   FaTruck, 
@@ -6,37 +8,38 @@ import {
   FaClock, 
   FaStar 
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const features = [
   {
     icon: <FaCheckCircle />,
     title: "Premium Quality",
-    desc: "Kitchen cabinets Tampa homeowners trust — built with durable materials for Florida's climate.",
+    desc: "Premium kitchen cabinets Tampa homeowners trust — built for beauty and durability.",
+  },
+  {
+    icon: <FaStar />,
+    title: "Modern & Shaker Styles",
+    desc: "A curated selection of modern + shaker styles built for today’s homes and trends.",
   },
   {
     icon: <FaTruck />,
     title: "Warehouse-Direct Pricing",
-    desc: "No middleman markup. Buy direct and save on modern + shaker styles built for today's homes.",
-  },
-  {
-    icon: <FaStore />,
-    title: "Local Showroom",
-    desc: "Visit our Tampa showroom to see finishes, feel materials, and choose with full confidence.",
-  },
-  {
-    icon: <FaUsers />,
-    title: "Expert Guidance",
-    desc: "From selection to completion — our team walks you through every step of your cabinet project.",
+    desc: "No middleman markup. Get high-end quality at factory-direct warehouse pricing.",
   },
   {
     icon: <FaClock />,
     title: "Fast Availability",
-    desc: "Ready stock for contractors and remodelers. Keep your jobs on schedule with consistent inventory.",
+    desc: "Ready stock and fast turnaround for contractors and remodelers to keep jobs on schedule.",
   },
   {
-    icon: <FaStar />,
-    title: "5-Star Craftsmanship",
-    desc: "Soft-close drawers, precision-fit finishes, and durable construction across every cabinet line.",
+    icon: <FaStore />,
+    title: "Local Showroom",
+    desc: "Experience quality firsthand at our local showroom experience in Tampa.",
+  },
+  {
+    icon: <FaUsers />,
+    title: "Expert Guidance",
+    desc: "Expert guidance from selection to completion to ensure your dream kitchen becomes reality.",
   },
 ];
 
@@ -46,28 +49,39 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-green-700 text-xs font-bold tracking-widest uppercase mb-3">
-            Why Choose Us
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <p className="text-green-800 text-xs font-bold tracking-widest uppercase mb-3">
+             WHY CHOOSE SOUTHERN DESIGN WAREHOUSE
           </p>
 
-          <h2 className="text-4xl sm:text-5xl font-bold text-stone-900 mb-5">
-            Where Quality Meets Value
+          <h2 className="text-4xl sm:text-5xl font-bold text-stone-900 mb-5 uppercase"
+          style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
+            WHERE QUALITY <span className="text-red-600">MEETS VALUE</span>
           </h2>
 
-          <p className="text-stone-500 text-lg max-w-2xl mx-auto">
-            At Southern Design Warehouse, we help you turn ordinary kitchens into stunning, functional spaces — without overpaying.
+          <p className="text-stone-500 text-lg max-w-2xl mx-auto leading-relaxed">
+            At Southern Design Warehouse, we help you turn ordinary kitchens into stunning, functional spaces without overpaying.
           </p>
-        </div>
+        </motion.div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {features.map((feature) => (
-            <div
+          {features.map((feature, idx) => (
+            <motion.div
               key={feature.title}
-              className="group p-8 border border-stone-100 rounded-sm hover:border-green-200 hover:shadow-lg hover:shadow-green-50 transition-all duration-300 bg-white"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className="group p-8 border border-stone-100 rounded-sm hover:border-green-800 hover:shadow-lg hover:shadow-green-50 transition-all duration-300 bg-white"
             >
-              <div className="w-12 h-12 bg-green-50 text-green-700 rounded-sm flex items-center justify-center mb-5 group-hover:bg-green-700 group-hover:text-white transition-colors duration-300">
+              <div className="w-12 h-12 bg-green-50 text-green-800 rounded-sm flex items-center justify-center mb-5 group-hover:bg-green-800 group-hover:text-white transition-colors duration-300">
                 {feature.icon}
               </div>
 
@@ -78,7 +92,7 @@ export default function Features() {
               <p className="text-stone-500 text-sm leading-relaxed">
                 {feature.desc}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -88,17 +102,18 @@ export default function Features() {
             Stop Settling
           </p>
 
-          <p className="text-white text-3xl sm:text-4xl font-bold mb-2">
+          <p className="text-white text-3xl sm:text-5xl font-bold mb-4 tracking-tight"
+          style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
             Stop settling for outdated kitchens.
           </p>
 
-          <p className="text-red-400 text-xl font-medium mb-8">
-            Create a space you&apos;re proud to walk into every day.
+          <p className="text-gray-300 text-xl sm:text-2xl font-medium mb-10 max-w-2xl mx-auto">
+            Create a space you’re proud to walk into every day.
           </p>
 
           <a
             href="#quote"
-            className="inline-block bg-red-600 hover:bg-red-500 text-white font-bold px-10 py-4 rounded-sm transition-colors"
+            className="inline-block bg-green-800 hover:bg-red-600 text-white font-bold px-10 py-4 rounded-sm transition-colors shadow-lg"
           >
             Start Your Transformation
           </a>

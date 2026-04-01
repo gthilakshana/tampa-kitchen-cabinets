@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaExpand, FaImage } from "react-icons/fa";
 
 export default function Gallery() {
  type GalleryItem = {
@@ -48,18 +48,20 @@ const [selected, setSelected] = useState<GalleryItem | null>(null);
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-green-700 text-xs font-bold uppercase mb-3">
-            Gallery
+          <p className="text-green-800 text-xs font-bold uppercase mb-3 flex items-center justify-center gap-2">
+            <FaImage className="text-green-800" /> PRODUCT GALLERY
           </p>
 
-          <h2 className="text-4xl font-bold text-stone-900 mb-4">
-            See the Transformation
+          <h2 className="text-4xl sm:text-6xl font-bold text-stone-900 mb-4 uppercase"
+          style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
+            SEE THE TRANSFORMATION
           </h2>
 
-          <p className="text-stone-500 text-lg">
-            Upgrade your space. Built to impress. Designed for living.
+          <p className="text-stone-500 text-xl font-light">
+            Upgrade Your Space. Built to Impress. Designed for Living.
           </p>
         </motion.div>
 
@@ -71,12 +73,13 @@ const [selected, setSelected] = useState<GalleryItem | null>(null);
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
               className="relative aspect-square overflow-hidden rounded-sm group cursor-pointer"
               onClick={() => setSelected(item)}
             >
               <img
                 src={item.img}
-                alt={item.label}
+                alt={`${item.label} kitchen cabinets installation in Tampa`}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
 

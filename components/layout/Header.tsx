@@ -60,9 +60,10 @@ export default function Header() {
               <Link
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className={`text-sm font-medium tracking-wide transition-colors hover:text-red-500 ${
-                  scrolled ? "text-stone-700" : "text-white/90"
+                className={`text-sm font-bold tracking-widest uppercase transition-colors hover:text-red-600 ${
+                  scrolled ? "text-stone-800" : "text-white"
                 }`}
+                style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
               >
                 {item}
               </Link>
@@ -81,7 +82,8 @@ export default function Header() {
             </a>
             <a
               href="#quote"
-              className="bg-green-700 hover:bg-green-800 text-white text-sm font-semibold px-5 py-2.5 rounded-sm transition-colors"
+              className="bg-green-800 hover:bg-red-600 text-white text-xs font-bold px-6 py-3 rounded-sm uppercase tracking-widest transition-all shadow-md"
+              style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
             >
               Free Quote
             </a>
@@ -152,7 +154,7 @@ export default function Header() {
 
             <a
               href="#quote"
-              className="block mt-4 bg-green-700 text-white text-center py-3 rounded-sm font-semibold"
+              className="block mt-6 bg-green-800 text-white text-center py-4 rounded-sm font-bold uppercase tracking-widest text-sm"
               onClick={() => setMenuOpen(false)}
             >
               Free Quote

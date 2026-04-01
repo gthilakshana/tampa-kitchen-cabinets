@@ -27,7 +27,7 @@ export default function QuoteForm() {
               Get Started
             </p>
 
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4 uppercase">
               Ready to Upgrade Your Kitchen?
             </h2>
 
